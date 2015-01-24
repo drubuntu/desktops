@@ -5,7 +5,7 @@ sudo rm /lib/plymouth/themes/default. plymouth
 sudo ln -s /lib/plymoouth/themes/drubuntu/drubuntu.plymouth /lib/plymouth/default.plymouth
 }
 installdesktop(){
-apt -y -q install kde-plasma-desktop 	 
+apt -y  install kde-plasma-desktop 	 
 apt -y dist-upgrade 	
 }
 #code to keep lightdm the default display manager

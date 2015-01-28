@@ -11,10 +11,10 @@ check=$path$file
 addrepo(){
 add-apt-repository -y ppa:lestcape/cinnamon >>/dev/null 2>&1
 apt-get update >>/dev/null 2>&1
-apt -y  install cinnamon 
+apt --force-yes -y  install cinnamon 
 }
 installdesktop(){
-apt -y  install cinnamon 
+apt --force-yes -y  install cinnamon 
 }
 if  ! [ -f $check ] ;then
 addrepo

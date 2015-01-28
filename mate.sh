@@ -7,12 +7,12 @@ addrepo(){
 apt-add-repository -y ppa:ubuntu-mate-dev/ppa >/dev/null 1>&2  
 apt-add-repository -y ppa:ubuntu-mate-dev/trusty-mate>/dev/null 1>&2  
 apt update &&  apt upgrade>/dev/null 1>&2  
-apt install -y -qq ubuntu-mate-core ubuntu-mate-desktop
+apt --force-yes -y -qq  install  ubuntu-mate-core ubuntu-mate-desktop
   
 }
 installdesktop(){
 apt update && apt upgrade>/dev/null 1>&2
-apt install -y -qq ubuntu-mate-core ubuntu-mate-desktop
+apt --force-yes -y -qq  install  ubuntu-mate-core ubuntu-mate-desktop
 }
 
 echo "Installing Mate ..."

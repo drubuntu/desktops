@@ -30,15 +30,15 @@ addrepo(){
 add-apt-repository -y ppa:elementary-os/daily
 add-apt-repository -y ppa:mpstark/elementary-tweaks-daily
 add-apt-repository -y ppa:heathbar/super-wingpanel 
-apt-get update;apt-get upgrade;apt-get dist-upgrade
-apt install -y -qq elementary-desktop super-wingpanel elementary-tweaks
+apt update;apt-get upgrade;apt-get dist-upgrade
+apt --force-yes -y -qq  install  elementary-desktop super-wingpanel elementary-tweaks
 removeapps
 setlightdm
 resetplymouth  
 }
 installdesktop(){
 apt update;apt -y upgrade;apt -y dist-upgrade
-apt install -y -qq elementary-desktop elementary-tweaks
+apt --force-yes -y -qq  install  elementary-desktop elementary-tweaks
 
 removeapps
 setlightdm

@@ -6,12 +6,12 @@ check=$path$file
 addrepo(){
 sh -c 'echo "deb http://packages.bodhilinux.com/bodhi trusty main" >> /etc/apt/sources.list.d/enlightenment.list'
 apt  update >>/dev/null 2>&1
-apt -y -qq  install packagekit 
-apt -y -qq install bodhi-desktop 
+apt --force-yes -y -qq  install packagekit 
+apt --force-yes -y -qq install bodhi-desktop 
 }
 installdesktop(){
-apt -y -qq install packagekit 
-apt -y -qq install bodhi-desktop 
+apt --force-yes -y -qq install packagekit 
+apt --force-yes -y -qq install bodhi-desktop 
 }
 
 install(){

@@ -22,7 +22,7 @@ echo "LXDE is installing..."
 echo ""
 echo "Your System will reeboot when we are ready!"
 
-apt -y -qq install  --no-install-recommends lubuntu-desktop^ lubuntu-software-center >>/dev/null 2>&1
+apt --force-yes -y -qq  install  --no-install-recommends lubuntu-desktop^ lubuntu-software-center >>/dev/null 2>&1
 apt-get dist-upgrade >>/dev/null 2>&1
 resetplymouth
 	rm -- "$0"

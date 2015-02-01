@@ -10,8 +10,8 @@ apt --force-yes -y -qq  install packagekit
 apt --force-yes -y -qq install bodhi-desktop 
 }
 installdesktop(){
-apt --force-yes -y -qq install packagekit 
-apt --force-yes -y -qq install bodhi-desktop 
+apt  -y --force-yes -qq install packagekit 
+apt  -y --force-yes -qq install bodhi-desktop 
 }
 
 install(){

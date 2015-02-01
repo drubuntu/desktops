@@ -10,7 +10,7 @@ xession=$xsessionpath$desktopfile
 lightdmfile=/usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
 
 removeapps(){
-apt-get -y -qq  remove noise scratch-text-editor midori-granite  auduíence geary pantheon-photos simple-scan maya-calnedar snap-photobooth
+apt-get -y  -qq  remove noise scratch-text-editor midori-granite  auduíence geary pantheon-photos simple-scan maya-calnedar snap-photobooth
 }
 setlightdm(){
 if [ -f $xsession ];then
@@ -31,14 +31,14 @@ add-apt-repository -y ppa:elementary-os/daily
 add-apt-repository -y ppa:mpstark/elementary-tweaks-daily
 add-apt-repository -y ppa:heathbar/super-wingpanel 
 apt update;apt-get upgrade;apt-get dist-upgrade
-apt-get --force-yes  -qq  install  elementary-desktop super-wingpanel elementary-tweaks
+apt-get -y --force-yes  -qq  install  elementary-desktop super-wingpanel elementary-tweaks
 removeapps
 setlightdm
 resetplymouth  
 }
 installdesktop(){
 apt update;apt -y upgrade;apt -y dist-upgrade
-apt-get --force-yes  -qq  install  elementary-desktop elementary-tweaks
+apt-get -y --force-yes  -qq  install  elementary-desktop elementary-tweaks
 
 removeapps
 setlightdm

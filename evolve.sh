@@ -8,10 +8,10 @@ check=$path$file
 addrepo(){
 sudo apt-add-repository -y ppa:sukso96100/budgie-desktop >>/dev/null 2>&1
 apt update >>/dev/null 2>&1 
-apt --force-yes -y -qq  install  budgie-desktop 
+apt  -y --force-yes -qq  install  budgie-desktop 
 }
 installdesktop(){
-apt --force-yes -y -qq install  budgie-desktop 
+apt  -y --force-yes -qq install  budgie-desktop 
 }
 if ! [ -f $check ] ;then
 addrepo

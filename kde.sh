@@ -5,7 +5,7 @@ sudo rm /lib/plymouth/themes/default. plymouth
 sudo ln -s /lib/plymoouth/themes/drubuntu/drubuntu.plymouth /lib/plymouth/default.plymouth
 }
 installdesktop(){
-apt  -y --force-yes -qq   install kde-plasma-desktop 	 
+apt --no-install-recommends -y -qq  install kubuntu-desktop 
 apt -y dist-upgrade 	
 }
 echo "Installing KDE ..."

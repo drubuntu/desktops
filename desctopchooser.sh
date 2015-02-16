@@ -17,6 +17,7 @@ echo -e " ${lightred}  ${runasrootmssg} ${NC}"
     exit
     4
 fi
+bdir=/opt/.drubuntu/
 DIRURL=/opt/.drubuntu/desktops/
 DLURL=https://raw.githubusercontent.com/drubuntu/desktops/master/
 AGENT="User-Agent: Mozilla/5.0 (Linux; U; Windows NT 5.1; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12"
@@ -41,6 +42,8 @@ rm -r "$DIRURL"
 fi
 echo -e "${lightgreen} ${fetchfeaturesssg} ${NC}"
 git clone https://github.com/drubuntu/desktops $DIRURL
+cp -r "$DIRURL"/desktopchooser.sh "$bdir"/desktopchooser.sh
+rm "$DIRURL"/desktopchooser.sh
 clear
 }
 download

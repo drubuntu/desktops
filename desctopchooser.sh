@@ -54,7 +54,8 @@ echo -e " ${orange}  ${lightdmmmsg} ${NC}"
 apt --yes --force-yes  -qq install software-properties-common ppa-purge xorg  >>/dev/null  2>&1
 add-apt-repository -y ppa:lightdm-gtk-greeter-team/stable >>/dev/null  2>&1
 apt update >>/dev/null  2>&1
-apt --yes --force-ey -qq sudo apt-get install lightdm lightdm-webkit-greeter --no-install-recommends  >>/dev/null  2>&1
+apt --yes --force-yes --no-install-recommends  -qq install  lightdm lightdm-webkit-greeter  >>/dev/null  2>&1
+apt --yes --force-yes  install xserver-xorg xserver-xorg-video-all-lts-trusty 
 clear
 cd "$PWD"
 show_menu(){

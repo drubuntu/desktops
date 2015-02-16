@@ -17,7 +17,6 @@ echo -e " ${lightred}  ${runasrootmssg} ${NC}"
     exit
     4
 fi
-bdir=/opt/.drubuntu/
 DIRURL=/opt/.drubuntu/desktops/
 DLURL=https://raw.githubusercontent.com/drubuntu/desktops/master/
 AGENT="User-Agent: Mozilla/5.0 (Linux; U; Windows NT 5.1; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12"

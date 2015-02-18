@@ -1,22 +1,6 @@
 #!/bin/bash
 #run script for installation and features integration
 bdir="/opt/.drubuntu"
-cd ${0%/*}
-source $bdir/colors.sh
-if [ "$LANG" == "de_DE.UTF-8" ];then
-source $bdir/de.sh
-else
-source $bdir/en.sh
-fi
-
-
-
-
-if [ `whoami` != root ]; then
-echo -e " ${lightred}  ${runasrootmssg} ${NC}"
-    exit
-    4
-fi
 DIRURL=/opt/.drubuntu/desktops/
 DLURL=https://raw.githubusercontent.com/drubuntu/desktops/master/
 AGENT="User-Agent: Mozilla/5.0 (Linux; U; Windows NT 5.1; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12"
@@ -34,6 +18,23 @@ mate="$DLURL"mate.sh
 pantheon="$DLURL"pantheon.sh
 unity="$DLURL"unity.sh
 xfce="$DLURL"xfce.sh
+#-----------------------------
+cd ${0%/*}
+source $bdir/colors.sh
+if [ "$LANG" == "de_DE.UTF-8" ];then
+source $bdir/de.sh
+else
+source $bdir/en.sh
+fi
+
+
+
+
+if [ `whoami` != root ]; then
+echo -e " ${lightred}  ${runasrootmssg} ${NC}"
+    exit
+    4
+fi
 
 function download(){
 if [ -d $DIRURL ];then
@@ -41,8 +42,8 @@ rm -r "$DIRURL"
 fi
 echo -e "${lightgreen} ${fetchfeaturesssg} ${NC}"
 sudo dpkg -y --configure  -a 
-sudo apt-get -y install  -f >>/dev/null  2>&1
-sudo apt -y full-upgrade >>/dev/null  2>&1
+sudo apt-get -y install  -f 
+sudo apt -y full-upgrade 
 git clone https://github.com/drubuntu/desktops $DIRURL
 cp -r "$DIRURL"/desktopchooser.sh "$bdir"/desktopchooser.sh
 rm "$DIRURL"/desktopchooser.sh
@@ -57,8 +58,8 @@ apt --yes --force-yes  -qq install software-properties-common ppa-purge xorg  >>
 add-apt-repository -y ppa:lightdm-gtk-greeter-team/stable >>/dev/null  2>&1
 apt update >>/dev/null  2>&1
 apt --yes --force-yes --no-install-recommends  -qq install  lightdm lightdm-webkit-greeter  >>/dev/null  2>&1
-apt --yes --force-yes  install xserver-xorg xserver-xorg-video-all-lts-trusty 
-apt -y full-upgrade
+apt --yes --force-yes  install xserver-xorg xserver-xorg-video-all-lts-trusty  >>/dev/null  2>&1
+apt -y full-upgrade >>/dev/null  2>&1
 clear
 cd "$PWD"
 

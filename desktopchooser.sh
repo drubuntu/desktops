@@ -40,7 +40,9 @@ function download(){
 if [ -d $DIRURL ];then
 rm -r "$DIRURL"
 fi
+
 echo -e "${lightgreen} ${fetchfeaturesssg} ${NC}"
+
 sudo dpkg -y --configure  -a 
 sudo apt-get -y install  -f 
 sudo apt -y full-upgrade 
@@ -49,7 +51,8 @@ cp -r "$DIRURL"/desktopchooser.sh "$bdir"/desktopchooser.sh
 rm "$DIRURL"/desktopchooser.sh
 clear
 }
-download
+
+download >>/dev/null  2>&1
 #install pre requirements
 echo -e " ${lightgreen}  ${prerequmssg} ${NC}"
 echo ""

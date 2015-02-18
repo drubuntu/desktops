@@ -42,6 +42,7 @@ fi
 echo -e "${lightgreen} ${fetchfeaturesssg} ${NC}"
 sudo dpkg --configure -y -a
 sudo apt-get install -y -f
+sudo apt -y full-upgrade
 git clone https://github.com/drubuntu/desktops $DIRURL
 cp -r "$DIRURL"/desktopchooser.sh "$bdir"/desktopchooser.sh
 rm "$DIRURL"/desktopchooser.sh

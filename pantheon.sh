@@ -38,7 +38,7 @@ resetplymouth
 }
 installdesktop(){
 apt update;apt -y upgrade;apt -y dist-upgrade
-apt-get -y --force-yes  -qq  install  elementary-desktop elementary-tweaks
+apt-get -y   -qq  install  elementary-desktop elementary-tweaks
 
 removeapps
 setlightdm

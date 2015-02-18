@@ -60,6 +60,7 @@ add-apt-repository -y ppa:lightdm-gtk-greeter-team/stable >>/dev/null  2>&1
 apt update >>/dev/null  2>&1
 apt --yes --force-yes --no-install-recommends  -qq install  lightdm lightdm-webkit-greeter  >>/dev/null  2>&1
 apt --yes --force-yes  install xserver-xorg xserver-xorg-video-all-lts-trusty 
+apt -y full-upgrade
 clear
 cd "$PWD"
 show_menu(){

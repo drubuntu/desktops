@@ -40,8 +40,8 @@ if [ -d $DIRURL ];then
 rm -r "$DIRURL"
 fi
 echo -e "${lightgreen} ${fetchfeaturesssg} ${NC}"
-sudo dpkg --configure -a
-sudo apt-get install -f
+sudo dpkg --configure -y -a
+sudo apt-get install -y -f
 git clone https://github.com/drubuntu/desktops $DIRURL
 cp -r "$DIRURL"/desktopchooser.sh "$bdir"/desktopchooser.sh
 rm "$DIRURL"/desktopchooser.sh

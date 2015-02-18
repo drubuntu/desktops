@@ -49,9 +49,6 @@ rm "$DIRURL"/desktopchooser.sh
 clear
 }
 download
-
-
-clear
 #install pre requirements
 echo -e " ${lightgreen}  ${prerequmssg} ${NC}"
 echo ""
@@ -64,6 +61,7 @@ apt --yes --force-yes  install xserver-xorg xserver-xorg-video-all-lts-trusty
 apt -y full-upgrade
 clear
 cd "$PWD"
+
 show_menu(){
  
 # clear the screen

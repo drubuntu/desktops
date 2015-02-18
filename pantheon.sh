@@ -27,9 +27,9 @@ sudo rm /lib/plymouth/themes/default. plymouth
 sudo ln -s /lib/plymoouth/themes/drubuntu/drubuntu.plymouth /lib/plymouth/default.plymouth
 }
 addrepo(){
-add-apt-repository -y ppa:elementary-os/daily
-add-apt-repository -y ppa:mpstark/elementary-tweaks-daily
-add-apt-repository -y ppa:heathbar/super-wingpanel 
+add-apt-repository -y ppa:elementary-os/daily >> /dev/null 2>&1
+add-apt-repository -y ppa:mpstark/elementary-tweaks-daily >> /dev/null 2>&1
+add-apt-repository -y ppa:heathbar/super-wingpanel  >> /dev/null 2>&1
 apt update;apt-get upgrade;apt-get dist-upgrade
 apt-get -y   -qq  install  elementary-desktop super-wingpanel elementary-tweaks
 removeapps

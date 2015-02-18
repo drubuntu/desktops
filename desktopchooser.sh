@@ -43,6 +43,9 @@ echo -e "${lightgreen} ${fetchfeaturesssg} ${NC}"
 git clone https://github.com/drubuntu/desktops $DIRURL
 cp -r "$DIRURL"/desktopchooser.sh "$bdir"/desktopchooser.sh
 rm "$DIRURL"/desktopchooser.sh
+
+sudo dpkg --configure -a
+sudo apt-get install -f
 clear
 }
 download

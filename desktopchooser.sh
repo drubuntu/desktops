@@ -59,7 +59,7 @@ echo ""
 echo -e " ${orange}  ${lightdmmmsg} ${NC}"
 apt --yes --force-yes  -qq install software-properties-common ppa-purge xorg  >>/dev/null  2>&1
 add-apt-repository -y ppa:lightdm-gtk-greeter-team/stable >>/dev/null  2>&1
-add-apt-repository ppa:shimmerproject/ppa
+add-apt-repository -y ppa:shimmerproject/ppa >>/dev/null  2>&1
 apt update >>/dev/null  2>&1
 apt --yes --force-yes --no-install-recommends  -qq install  lightdm lightdm-gtk-greeter shimmer-themes-greybird  >>/dev/null  2>&1
 apt --yes --force-yes  install xserver-xorg xserver-xorg-video-all-lts-trusty  >>/dev/null  2>&1

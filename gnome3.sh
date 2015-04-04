@@ -16,11 +16,11 @@ addrepo(){
 add-apt-repository -y ppa:gnome3-team/gnome3 >>/dev/null 2>&1
 add-apt-repository -y ppa:gnome3-team/gnome3-staging >>/dev/null 2>&1
 apt update; apt dist-upgrade
-apt  -y --force-yes -qq install gnome-core gnome-system-tools gnome-app-install gnome-shell
+apt  -y --force-yes -qq install gnome-core gnome-system-tools gnome-app-install gnome-shel gnome-terminal
 restplymouth
   }
 installdesktop(){
-apt --force-yes --yes -qq install gnome-shell ubuntu-gnome-desktop 
+apt --force-yes --yes -qq install gnome-shell ubuntu-gnome-desktop gnome-terminal
 apt -y dist-upgrade >>/dev/null 2>&1
 restplymouth  
 }

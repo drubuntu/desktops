@@ -11,8 +11,8 @@ sudo sh -c 'echo "deb http://ftp.fau.de/deepin trusty main non-free universe" >>
 sudo sh -c 'echo "deb-src http://ftp.fau.de/deepin trusty main non-free universe" >> /etc/apt/sources.list'
 wget http://ftp.fau.de/deepin /deepin/project/deepin-keyring.gpg
 gpg --import deepin-keyring.gpg
-sudo gpg --export --armor 209088E7 | sudo apt-key add -
-sudo apt-gett update;sudo apt-get upgrade; sudo apt-ghet dist-upgrade  
+sudo gpg --export --armor | sudo apt-key add -
+sudo apt-get update;sudo apt-get upgrade  
 }
 installdesktop(){
 addrepo

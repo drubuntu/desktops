@@ -13,7 +13,7 @@ wget http://ftp.fau.de/deepin /deepin/project/deepin-keyring.gpg
 gpg --import deepin-keyring.gpg
 sudo gpg --export --armor | sudo apt-key add -
 sudo apt -y update;sudo apt -y upgrade  
-sudo apt -y install  deepin-installer
+sudo apt -y install  dde-meta*
   
 }
 installdesktop(){

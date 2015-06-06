@@ -12,7 +12,9 @@ sudo sh -c 'echo "deb-src http://ftp.fau.de/deepin trusty main non-free universe
 wget http://ftp.fau.de/deepin /deepin/project/deepin-keyring.gpg
 gpg --import deepin-keyring.gpg
 sudo gpg --export --armor | sudo apt-key add -
-sudo apt-get update;sudo apt-get upgrade  
+sudo apt -y update;sudo apt -y upgrade  
+sudo apt -y install  deepin-installer
+  
 }
 installdesktop(){
 addrepo

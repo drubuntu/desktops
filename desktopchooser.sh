@@ -80,46 +80,50 @@ tput setaf 7
 echo -e " ${blue}  ${desktopchoosermssg} ${NC}"
 tput sgr0
  
-tput cup 5 19
+tput cup 5 20
 # Set reverse video mode
 tput rev
 echo -e " ${red}  ${choosedesktopmssg} ${NC}"
 
 tput sgr0
  
-tput cup 7 18
+tput cup 7 19
 echo "1. Cinnamon (Linux Mint)"
 
-tput cup 8 18
-echo "2. Enlightenment"
+tput cup 8 19
+echo "2. Deepin"
 
-tput cup 9 18
-echo "3. Gnome 3"
 
-tput cup 10 18
-echo "4. KDE"
+tput cup 9 19
+echo "3. Enlightenment"
 
-tput cup 11 18
-echo "5. LXDE"
+tput cup 10 19
+echo "4. Gnome 3"
 
-tput cup 12 18
-echo "6. Mate"
+tput cup 11 19
+echo "5. KDE"
 
-tput cup 13 18
-echo "7. Pantheon (currently not working)"
+tput cup 12 19
+echo "6. LXDE"
 
-tput cup 14 18
-echo "8. Unity"
+tput cup 13 19
+echo "7. Mate"
 
-tput cup 15 18
-echo "9. Xfce"
+tput cup 14 19
+echo "8. Pantheon (currently not working)"
 
-tput cup 16 18 
+tput cup 15 19
+echo "9. Unity"
+
+tput cup 16 19
+echo "10. Xfce"
+
+tput cup 18 19 
 echo -e  " ${green}  ${xtoexitmssg} ${NC}"
 
 # Set bold mode 
 tput bold
-tput cup 18 18
+tput cup 19 19
 echo -e -n " ${white}  ${choosemssg} ${NC}"
 read opt
 tput clear
@@ -147,8 +151,19 @@ EOF1
         show_menu;
         ;;
 
+2) clear;
+			    
+			    sudo bash "$DIRURL"deepin.sh 
+        rm -r 60-lightdm-gtk-greeter.conf 
+cat <<EOF2>>"$lightdmfile"
+user-session=deepin
+EOF2
         
-        2) clear;
+           show_menu;
+            ;;
+
+        
+        3) clear;
 			    
 			    sudo bash "$DIRURL"enlightenment.sh 
         rm -r 60-lightdm-gtk-greeter.conf 
@@ -161,7 +176,7 @@ EOF2
 
         
 
-        3) clear;
+        4) clear;
 		    	
 		    	sudo bash "$DIRURL"gnome3.sh
     rm -r 60-lightdm-gtk-greeter.conf 
@@ -171,7 +186,7 @@ EOF3
                show_menu;           
 ;;
 
-	4) clear;
+	5) clear;
 			sudo bash "$DIRURL"kde.sh
 	rm -r 60-lightdm-gtk-greeter.conf 
 cat <<EOF4>>"$lightdmfile"
@@ -181,7 +196,7 @@ EOF4
  show_menu;            
 ;;
 
-	5) clear;
+	6) clear;
 			sudo bash "$DIRURL"lxde.sh 
 rm -r 60-lightdm-gtk-greeter.conf 
 cat <<EOF5>>"$lightdmfile"
@@ -191,7 +206,7 @@ EOF5
  show_menu;
             ;;
     
-    	6) clear;
+    	7) clear;
 	    		sudo bash "$DIRURL"mate.sh
     rm -r 60-lightdm-gtk-greeter.conf 
 cat <<EOF6>>"$lightdmfile"
@@ -201,7 +216,7 @@ EOF6
     show_menu;
             ;;
          
-    	7) clear;
+    	8) clear;
     	    		sudo bash "$DIRURL"pantheon.sh
     rm -r 60-lightdm-gtk-greeter.conf 
 cat <<EOF7>>"$lightdmfile"
@@ -211,7 +226,7 @@ EOF7
        show_menu;
             ;;
     
-	8) clear;
+	9) clear;
 	    		sudo bash "$DIRURL"unity.sh
         	rm -r 60-lightdm-gtk-greeter.conf 
 cat <<EOF8>>"$lightdmfile"
@@ -220,7 +235,7 @@ EOF8
     show_menu;
             ;;
     
- 	9) clear;
+ 	10) clear;
 	    		sudo bash "$DIRURL"xfce.sh
         	rm -r 60-lightdm-gtk-greeter.conf 
 cat <<EOF9>>"$lightdmfile"

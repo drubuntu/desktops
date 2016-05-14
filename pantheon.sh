@@ -27,7 +27,7 @@ sudo rm /lib/plymouth/themes/default. plymouth
 sudo ln -s /lib/plymoouth/themes/drubuntu/drubuntu.plymouth /lib/plymouth/default.plymouth
 }
 addrepo(){
-xorg
+apt -y install xorg
 apt-get install  -qq softwre-properties-common &&
 sleep 5
 apt-add-repository -y ppa gnome3 &&

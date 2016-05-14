@@ -28,7 +28,8 @@ sudo ln -s /lib/plymoouth/themes/drubuntu/drubuntu.plymouth /lib/plymouth/defaul
 }
 addrepo(){
 xorg
-apt install -y -qq softwre-properties-common &&
+apt-get install  -qq softwre-properties-common &&
+sleep 5
 apt-add-repository -y ppa gnome3 &&
 apt-add-repository -y ppa gnome3 saging &&
 apt-add-repository -y ppa elementary/stable &&

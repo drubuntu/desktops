@@ -27,11 +27,16 @@ sudo rm /lib/plymouth/themes/default. plymouth
 sudo ln -s /lib/plymoouth/themes/drubuntu/drubuntu.plymouth /lib/plymouth/default.plymouth
 }
 addrepo(){
-add-apt-repository -y ppa:elementary-os/stable >> /dev/null 2>&1
-add-apt-repository -y ppa:mpstark/elementary-tweaks-daily >> /dev/null 2>&1
-#super wingpanel is no longer maintaind and out of date
-#add-apt-repository -y ppa:heathbar/super-wingpanel  >> /dev/null 2>&1
-apt update;apt-get upgrade;apt-get dist-upgrade
+xorg
+apt install -y -qq softwre-properties-common &&
+apt-add-repository -y ppa gnome3 &&
+apt-add-repository -y ppa gnome3 saging &&
+apt-add-repository -y ppa elementary/stable &&
+apt-add-repository -y ppa elementary/os patches &&
+apt update &&
+apt-get -y remove unity-greeter &&
+dpg-reconfigure pantheon-greeter &&
+apt-get upgrade;apt-get dist-upgrade
 apt-get -y --force-yes   -qq  install  elementary-desktop
 removeapps
 setlightdm

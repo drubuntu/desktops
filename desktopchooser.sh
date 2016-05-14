@@ -102,7 +102,7 @@ tput cup 13 19
 echo "7. Mate"
 
 tput cup 14 19
-echo "8. Pantheon (currently not working)"
+echo "8. Pantheon"
 
 tput cup 15 19
 echo "9. Unity"

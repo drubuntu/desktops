@@ -24,6 +24,7 @@ apt-get -y remove unity-greeter &&
 dpkg-reconfigure pantheon-greeter &&
 apt -y dist-upgrade && apt- y full-upgrade
 }
+
 addrepo
 removeapps
 resetplymouth  

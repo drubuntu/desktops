@@ -23,6 +23,7 @@ apt-get -qq -y install elemntary-desktop
 apt-get -y remove unity-greeter &&
 dpkg-reconfigure pantheon-greeter &&
 apt -y dist-upgrade && apt- y full-upgrade
+}
 removeapps
 resetplymouth  
 }

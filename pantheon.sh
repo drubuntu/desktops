@@ -17,7 +17,7 @@ addrepo(){
 apt-add-repository -y ppa:gnome3-team/gnome3 &&
 apt-add-repository -y ppa:gnome3-team/gnome3-staging &&
 apt-add-repository -y ppa:elementary-os/stable &&
-apt-add-repository -y ppa:elementary-os/patches &&
+apt-add-repository -y ppa:elementary-os/os-patches &&
 apt update &&
 apt-get -qq -y install elemntary-desktop
 apt-get -y remove unity-greeter &&

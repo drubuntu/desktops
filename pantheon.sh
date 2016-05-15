@@ -8,7 +8,7 @@ removeapps(){
 apt-get -y  -qq  remove noise scratch-text-editor midori-granite  auduíence geary pantheon-photos simple-scan maya-calnedar snap-photobooth
 }
 
-restplymouth(){
+resetplymouth(){
 #reset plymouthlogo if dist-upgrade change logo
 sudo rm /lib/plymouth/themes/default. plymouth
 sudo ln -s /lib/plymoouth/themes/drubuntu/drubuntu.plymouth /lib/plymouth/default.plymouth

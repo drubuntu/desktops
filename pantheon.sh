@@ -14,7 +14,7 @@ sudo rm /lib/plymouth/themes/default. plymouth
 sudo ln -s /lib/plymoouth/themes/drubuntu/drubuntu.plymouth /lib/plymouth/default.plymouth
 }
 addrepo(){
-apt-add-repository -y ppa:gnome3team/gnome3 &&
+apt-add-repository -y ppa:gnome3-team/gnome3 &&
 apt-add-repository -y ppa:gnome3-team/gnome3-staging &&
 apt-add-repository -y ppa:elementary-os/stable &&
 apt-add-repository -y ppa:elementary-os/patches &&

@@ -3,11 +3,6 @@ echo "Installing Pantheon ..."
 echo ""
 path=/etc/apt/sources.list.d/
 file=elementary-os-daily-trusty.list
-check=$path$file
-xsessionpath=/usr/share/xsessions/
-desktopfile=pantheon.desktop
-xession=$xsessionpath$desktopfile
-lightdmfile=/usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
 
 removeapps(){
 apt-get -y  -qq  remove noise scratch-text-editor midori-granite  auduíence geary pantheon-photos simple-scan maya-calnedar snap-photobooth

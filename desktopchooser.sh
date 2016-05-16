@@ -3,6 +3,7 @@
 bdir="/opt/.drubuntu"
 DIRURL=/opt/.drubuntu/desktops/
 DLURL=https://raw.githubusercontent.com/drubuntu/desktops/master/
+$lightdmdir/usr/share/lightdm
 AGENT="User-Agent: Mozilla/5.0 (Linux; U; Windows NT 5.1; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12"
 xsessionpath=/usr/share/xsessions/
 xession=$xsessionpath$desktopfile 
@@ -36,12 +37,21 @@ echo -e " ${lightred}  ${runasrootmssg} ${NC}"
     4
 fi
 
+if ! [ -d $lightdmdir ];then
+sudo apt-get -y- qq installl lightdm
+fi
+
+
 function download(){
 if [ -d $DIRURL ];then
 rm -r "$DIRURL"
 fi
 
 echo -e "${lightgreen} ${fetchfeaturesssg} ${NC}"
+
+if ! [ -d $lightdmdir ];then
+sudo apt-get -y- qq installl lightdm
+fi
 
 sudo dpkg -y --configure  -a 
 sudo apt-get -y install  -f 

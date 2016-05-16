@@ -82,40 +82,36 @@ tput sgr0
 tput cup 7 19
 echo "1. Cinnamon (Linux Mint)"
 
-tput cup 8 19
-echo "2. Deepin"
+tput cup 8 18
+echo "2. Enlightenment"
 
+tput cup 9 18
+echo "3. Gnome 3"
 
-tput cup 9 19
-echo "3. Enlightenment"
+tput cup 10 18
+echo "4. KDE"
 
-tput cup 10 19
-echo "4. Gnome 3"
+tput cup 11 18
+echo "5. LXDE"
 
-tput cup 11 19
-echo "5. KDE"
+tput cup 12 18
+echo "6. Mate"
 
-tput cup 12 19
-echo "6. LXDE"
+tput cup 13 18
+echo "7. Pantheon"
 
-tput cup 13 19
-echo "7. Mate"
+tput cup 14 18
+echo "8. Unity"
 
-tput cup 14 19
-echo "8. Pantheon"
+tput cup 15 18
+echo "9. Xfce"
 
-tput cup 15 19
-echo "9. Unity"
-
-tput cup 16 19
-echo "10. Xfce"
-
-tput cup 18 19 
+tput cup 16 18 
 echo -e  " ${green}  ${xtoexitmssg} ${NC}"
 
 # Set bold mode 
 tput bold
-tput cup 19 19
+tput cup 18 18
 echo -e -n " ${white}  ${choosemssg} ${NC}"
 read opt
 tput clear
@@ -134,8 +130,8 @@ while [ opt != '' ]
         1) clear;
 
 				
-				sudo bash "$DIRURL"cinnamon.sh 
-        rm -r 60-lightdm-gtk-greeter.conf 
+	sudo bash "$DIRURL"cinnamon.sh 
+        rm -r 50-unity-greeter.conf 
 cat <<EOF1>>"$lightdmfile"
 user-session=cinnamon
 EOF1
@@ -143,22 +139,12 @@ EOF1
         show_menu;
         ;;
 
-2) clear;
-			    
-			    sudo bash "$DIRURL"deepin.sh 
-        rm -r 60-lightdm-gtk-greeter.conf 
-cat <<EOF2>>"$lightdmfile"
-user-session=deepin
-EOF2
-        
-           show_menu;
-            ;;
 
         
-        3) clear;
+        2) clear;
 			    
 			    sudo bash "$DIRURL"enlightenment.sh 
-        rm -r 60-lightdm-gtk-greeter.conf 
+        rm -r 50-unity-greeter.conf 
 cat <<EOF2>>"$lightdmfile"
 user-session=enlightenment
 EOF2
@@ -168,19 +154,19 @@ EOF2
 
         
 
-        4) clear;
+        3) clear;
 		    	
 		    	sudo bash "$DIRURL"gnome3.sh
-    rm -r 60-lightdm-gtk-greeter.conf 
+    rm -r 50-unity-greeter.conf 
 cat <<EOF3>>"$lightdmfile"
 user-session=gnome
 EOF3
                show_menu;           
 ;;
 
-	5) clear;
+	4) clear;
 			sudo bash "$DIRURL"kde.sh
-	rm -r 60-lightdm-gtk-greeter.conf 
+	rm -r 50-unity-greeter.conf 
 cat <<EOF4>>"$lightdmfile"
 user-session=kde-plasma
 EOF4
@@ -188,9 +174,9 @@ EOF4
  show_menu;            
 ;;
 
-	6) clear;
+	5) clear;
 			sudo bash "$DIRURL"lxde.sh 
-rm -r 60-lightdm-gtk-greeter.conf 
+rm -r 50-unity-gtk-greeter.conf 
 cat <<EOF5>>"$lightdmfile"
 user-session=Lubuntu
 EOF5
@@ -198,9 +184,9 @@ EOF5
  show_menu;
             ;;
     
-    	7) clear;
+    	6) clear;
 	    		sudo bash "$DIRURL"mate.sh
-    rm -r 60-lightdm-gtk-greeter.conf 
+    rm -r 50-unity-gtk-greeter.conf 
 cat <<EOF6>>"$lightdmfile"
 user-session=mate
 EOF6
@@ -208,9 +194,9 @@ EOF6
     show_menu;
             ;;
          
-    	8) clear;
+    	7) clear;
     	    		sudo bash "$DIRURL"pantheon.sh
-    rm -r 60-lightdm-gtk-greeter.conf 
+    rm -r 50-unity-greeter.conf 
 cat <<EOF7>>"$lightdmfile"
 user-session=pantheon
 EOF7
@@ -218,7 +204,7 @@ EOF7
        show_menu;
             ;;
     
-	9) clear;
+	8) clear;
 	    		sudo bash "$DIRURL"unity.sh
         	rm -r 60-lightdm-gtk-greeter.conf 
 cat <<EOF8>>"$lightdmfile"
@@ -227,9 +213,9 @@ EOF8
     show_menu;
             ;;
     
- 	10) clear;
+ 	9) clear;
 	    		sudo bash "$DIRURL"xfce.sh
-        	rm -r 60-lightdm-gtk-greeter.conf 
+        	rm -r 50-unity-greeter.conf 
 cat <<EOF9>>"$lightdmfile"
 user-session=xfce4
 EOF9

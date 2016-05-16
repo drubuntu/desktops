@@ -9,12 +9,14 @@ check=$path$file
 
 
 addrepo(){
-add-apt-repository -y ppa:lestcape/cinnamon >>/dev/null 2>&1
+sudo apt-get install xorg lightdm
+add-apt-repository -y  ppa:embrosyn/cinnamon >>/dev/null 2>&1
 apt-get update >>/dev/null 2>&1
-apt -y  install cinnamon 
+installdesktop 
 }
 installdesktop(){
-apt -y  install cinnamon 
+sudo apt -y  install cinnamon 
+sudo apt-get -y -qq dist-upgrade
 }
 if  ! [ -f $check ] ;then
 addrepo

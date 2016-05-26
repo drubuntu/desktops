@@ -1,24 +1,9 @@
 #!/bin/bash
 #run script for installation and features integration
 bdir="/opt/.drubuntu"
-DIRURL=/opt/.drubuntu/desktops/
-DLURL=https://raw.githubusercontent.com/drubuntu/desktops/master/
 $lightdmdir/usr/share/lightdm
 AGENT="User-Agent: Mozilla/5.0 (Linux; U; Windows NT 5.1; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12"
-xsessionpath=/usr/share/xsessions/
-xession=$xsessionpath$desktopfile 
-lightdmfile=/usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf
-cinnamon="$DLURL"cinnamon.sh
-deepin="$DLURL"deepin.sh
-e19="$DLURL"enlightenment.sh
-evolve="$DLURL"evolve.sh
-gnome3="$DLURL"gnome3.sh
-kde="$DLURL"kde.sh
-lxde="$DLURL"lxde.sh
-mate="$DLURL"mate.sh
-pantheon="$DLURL"pantheon.sh
-unity="$DLURL"unity.sh
-xfce="$DLURL"xfce.sh
+XSESSIONPATH=/USR/SHARE/XSESSIONS/
 #-----------------------------
 cd ${0%/*}
 source $bdir/colors.sh
@@ -28,46 +13,36 @@ else
 source $bdir/en.sh
 fi
 
-
-
-
 if [ `whoami` != root ]; then
 echo -e " ${lightred}  ${runasrootmssg} ${NC}"
     exit
     4
 fi
 
+lightdm(){
 if ! [ -d $lightdmdir ];then
 sudo apt-get -y- qq installl lightdm
 fi
-
+}
 
 function download(){
 if [ -d $DIRURL ];then
 rm -r "$DIRURL"
 fi
 
-echo -e "${lightgreen} ${fetchfeaturesssg} ${NC}"
-
 if ! [ -d $lightdmdir ];then
-sudo apt-get -y- qq installl lightdm
+echo -e " ${lightgreen}  ${prerequmssg} ${NC}"
+sudo apt-get -y- qq installl xorg lightdm
 fi
-
+cd "$PWD"
 sudo dpkg -y --configure  -a 
 sudo apt-get -y install  -f 
 sudo apt -y full-upgrade 
-git clone https://github.com/drubuntu/desktops $DIRURL
-cp -r "$DIRURL"/desktopchooser.sh "$bdir"/desktopchooser.sh
-rm "$DIRURL"/desktopchooser.sh
 clear
 }
 
-download >>/dev/null  2>&1
 #install pre requirements
-echo -e " ${lightgreen}  ${prerequmssg} ${NC}"
-echo ""
-clear
-cd "$PWD"
+
 
 show_menu(){
  
@@ -108,7 +83,7 @@ tput cup 12 18
 echo "6. Mate"
 
 tput cup 13 18
-echo "7. Pantheon"
+echo "7. Evolve"
 
 tput cup 14 18
 echo "8. Unity"
@@ -140,12 +115,15 @@ while [ opt != '' ]
         1) clear;
 
 				
-	sudo bash "$DIRURL"cinnamon.sh 
-        rm -r 50-unity-greeter.conf 
-cat <<EOF1>>"$lightdmfile"
-user-session=cinnamon
-EOF1
-        
+echo "Installing Cinnamon ..."
+echo ""
+echo "Your System will reeboot when  we are ready!"
+lightdm
+add-apt-repository -y  ppa:embrosyn/cinnamon >>/dev/null 2>&1
+apt-get update >>/dev/null 2>&1
+apt -y  install cinnamon 
+apt-get -y -qq dist-upgrade
+reboot
         show_menu;
         ;;
 
@@ -166,11 +144,7 @@ EOF2
 
         3) clear;
 		    	
-		    	sudo bash "$DIRURL"gnome3.sh
-    rm -r 50-unity-greeter.conf 
-cat <<EOF3>>"$lightdmfile"
-user-session=gnome
-EOF3
+apt -y -qq install ubuntu-gnome-desktop^
                show_menu;           
 ;;
 
@@ -205,23 +179,17 @@ EOF6
             ;;
          
     	7) clear;
-    	    		sudo bash "$DIRURL"pantheon.sh
-    rm -r 50-unity-greeter.conf 
-cat <<EOF7>>"$lightdmfile"
-user-session=pantheon
-EOF7
-    
+   echo "Installing Evolve ..."
+echo ""
+echo "Your System will reeboot when we are ready!"
+sudo apt-add-repository -y ppa:sukso96100/budgie-desktop >>/dev/null 2>&1
+apt update >>/dev/null 2>&1 
+apt  -y --force-yes -qq  install  budgie-desktop 
        show_menu;
             ;;
     
 	8) clear;
-	    		sudo bash "$DIRURL"unity.sh
-        	rm -r 60-lightdm-gtk-greeter.conf 
-cat <<EOF8>>"$lightdmfile"
-user-session=unity
-EOF8
-    show_menu;
-            ;;
+apt -y -qq ubuntu-desktop^            ;;
     
  	9) clear;
 	    		sudo bash "$DIRURL"xfce.sh

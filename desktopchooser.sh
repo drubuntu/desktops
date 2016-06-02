@@ -83,7 +83,7 @@ tput cup 11 22
 echo "6. Mate"
 
 tput cup 12 22
-echo "7. Evolve"
+echo "7. Budgie"
 
 tput cup 13 22
 echo "8. Unity"
@@ -200,11 +200,12 @@ reboot
             ;;
          
     	7) clear;
-   echo "Installing Evolve ..."
+   echo "Installing Budgie ..."
 echo "Your System will reeboot when we are ready!"
-sudo apt-add-repository -y ppa:sukso96100/budgie-desktop >>/dev/null 2>&1
+sudo apt-add-repository -y ppa:budgie-remix/ppa >>/dev/null 2>&1
 apt update >>/dev/null 2>&1 
 apt  -y --force-yes -qq  install  budgie-desktop >>/dev/null 2>&1 
+apt -y dist-upgrade && apt -y full-upgrade >>/dev/null 2>&1
 reboot
        show_menu;
             ;;

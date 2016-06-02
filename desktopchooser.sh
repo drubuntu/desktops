@@ -161,7 +161,7 @@ reboot
 	4) clear;
 echo "Installing KDE ..."
 echo "Your System will reeboot when we are ready!"
-echo -e \n
+echo -e " \n
                         ( \n
                           )     ( \n
                    ___...(-------)-....___ \n
@@ -184,7 +184,7 @@ echo -e \n
        '._     """----.....______.....----"""     _.' \n
           `""--..,,_____            _____,,..--""` \n
                         `"""----"""` \n
-echo "KDE is really big. So take your time and grap some coffee!"
+KDE is really big. So take your time and grap some coffee!"
 
 
 

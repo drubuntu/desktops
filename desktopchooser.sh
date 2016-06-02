@@ -159,7 +159,9 @@ reboot
 echo "Installing KDE ..."
 echo "Your System will reeboot when we are ready!"
 add-apt-repository -y ppa:kubuntu-ppa/backports >>/dev/null 2>&1 &&
-apt update >>/dev/null 2>&1 &&  apt full-upgrade >>/dev/null 2>&1 &&
+apt update >>/dev/null 2>&1 &&  
+apt -y install kubuntu-desktop >>/dev/null 2>&1 &&
+apt full-upgrade >>/dev/null 2>&1 &&
 reboot 
  show_menu;            
 ;;

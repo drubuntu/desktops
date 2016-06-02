@@ -65,34 +65,37 @@ echo -e " ${red}  ${choosedesktopmssg} ${NC}"
 tput sgr0
  
 tput cup 7 19
-echo "1. Cinnamon (Linux Mint)"
+echo "1. Cinnamon"
 
-tput cup 8 18
-echo "2. Enlightenment"
+tput cup 8 19
+echo "2. Enlightenment (currently not redy for 16.04)"
 
-tput cup 9 18
+tput cup 9 19
 echo "3. Gnome 3"
 
-tput cup 10 18
+tput cup 10 19
 echo "4. KDE"
 
-tput cup 11 18
+tput cup 11 19
 echo "5. LXDE"
 
-tput cup 12 18
+tput cup 12 19
 echo "6. Mate"
 
-tput cup 13 18
+tput cup 13 19
 echo "7. Evolve"
 
-tput cup 14 18
+tput cup 14 19
 echo "8. Unity"
 
-tput cup 15 18
+tput cup 15 19
 echo "9. Xfce"
 
-tput cup 16 18 
+tput cup 16 19 
+echo "10 Pantheon"
+tput cup 18 19 
 echo -e  " ${green}  ${xtoexitmssg} ${NC}"
+
 
 # Set bold mode 
 tput bold
@@ -144,7 +147,9 @@ EOF2
 
         3) clear;
 		    	
-apt -y -qq install ubuntu-gnome-desktop^
+echo "Your System will reeboot when we are ready!"
+apt -y -qq install ubuntu-gnome-desktop&&
+reboot
                show_menu;           
 ;;
 
@@ -159,21 +164,18 @@ EOF4
 ;;
 
 	5) clear;
-			sudo bash "$DIRURL"lxde.sh 
-rm -r 50-unity-gtk-greeter.conf 
-cat <<EOF5>>"$lightdmfile"
-user-session=Lubuntu
-EOF5
- 
+echo "Your System will reeboot when we are ready!"
+
+apt -y -qq install kde-desktop &&
+reboot
  show_menu;
             ;;
     
     	6) clear;
-	    		sudo bash "$DIRURL"mate.sh
-    rm -r 50-unity-gtk-greeter.conf 
-cat <<EOF6>>"$lightdmfile"
-user-session=mate
-EOF6
+echo "Your System will reeboot when we are ready!"
+
+apt -y -qq install mate-desktoop&&
+reboot
        
     show_menu;
             ;;
@@ -184,23 +186,29 @@ echo ""
 echo "Your System will reeboot when we are ready!"
 sudo apt-add-repository -y ppa:sukso96100/budgie-desktop >>/dev/null 2>&1
 apt update >>/dev/null 2>&1 
-apt  -y --force-yes -qq  install  budgie-desktop 
+apt  -y --force-yes -qq  install  budgie-desktop&& 
+reboot
        show_menu;
             ;;
     
 	8) clear;
-apt -y -qq ubuntu-desktop^            ;;
+apt -y -qq ubuntu-desktop            ;;
     
  	9) clear;
-	    		sudo bash "$DIRURL"xfce.sh
-        	rm -r 50-unity-greeter.conf 
-cat <<EOF9>>"$lightdmfile"
-user-session=xfce4
-EOF9
+echo "Your System will reeboot when we are ready!"
+sudo apt-get -y -qq install xubuntu-desktop gksu leafpad synaptic&&
+reboot
+
     show_menu;
             ;;
     
-  
+  10) clear;
+echo "not ready yet"
+exit
+
+    show_menu;
+            ;;
+    
 
 
         x)exit;

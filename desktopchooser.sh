@@ -161,6 +161,38 @@ reboot
 	4) clear;
 echo "Installing KDE ..."
 echo "Your System will reeboot when we are ready!"
+echo ""
+echo "                        ( " 
+echo "                          )     ( "
+echo "                   ___...(-------)-....___ "
+echo '               .-""       )    (          ""-. '
+echo "         .-``'|-._             )         _.-| "
+echo '        /  .--.|   `""---...........---""`   | '
+echo "       /  /    |                             | "
+echo "       |  |    |                             | "
+echo "        \  \   |                             | "
+echo "         `\ `\ |                             | "
+echo "           `\ `|                             | "
+echo "           _/ /\                             / "
+echo "          (__/  \                           / "
+echo "       _..---""` \                         /`""---.._ " '
+echo '    .-'           \                       /          '-. " '
+echo '   :               `-.__             __.-'              : " '
+echo '   :                  ) ""---...---"" (                 : '
+echo '    '._               `"--...___...--"`              _.' '
+echo '      \""--..__                              __..--""/ '
+echo '       '._     """----.....______.....----"""     _.' '
+echo '          `""--..,,_____            _____,,..--""` '
+echo '                        `"""----"""` '
+echo "KDE is really big. So take your time and grap some coffee!"
+
+
+
+
+
+
+
+
 add-apt-repository -y ppa:kubuntu-ppa/backports >>/dev/null 2>&1 &&
 apt update >>/dev/null 2>&1 &&  
 apt -y install kubuntu-desktop >>/dev/null 2>&1 &&

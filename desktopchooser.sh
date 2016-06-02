@@ -57,50 +57,53 @@ tput setaf 7
 echo -e " ${blue}  ${desktopchoosermssg} ${NC}"
 tput sgr0
  
-tput cup 5 20
+tput cup 5 22
 # Set reverse video mode
 tput rev
 echo -e " ${red}  ${choosedesktopmssg} ${NC}"
 
 tput sgr0
  
-tput cup 6 20
+tput cup 6 22
 echo "1. Cinnamon"
 
-tput cup 7 20
+tput cup 7 22
 echo "2. Enlightenment (currently not redy for 16.04)"
 
-tput cup 8 20
+tput cup 8 22
 echo "3. Gnome 3"
 
-tput cup 9 20
+tput cup 9 22
 echo "4. KDE"
 
-tput cup 10 20
+tput cup 10 22
 echo "5. LXDE"
 
-tput cup 11 20
+tput cup 11 22
 echo "6. Mate"
 
-tput cup 12 20
+tput cup 12 22
 echo "7. Evolve"
 
-tput cup 13 20
+tput cup 13 22
 echo "8. Unity"
 
-tput cup 14 20
+tput cup 14 22
 echo "9. Xfce"
 
-tput cup 15 20 
+tput cup 15 22 
 echo "10 Pantheon (currently not stable for 16.04 use daily on your own risk!)"
-tput cup 18 20 
+tput cup 18 22 
 echo -e  "${green}  ${xtoexitmssg} ${NC}"
 
 
 # Set bold mode 
 tput bold
-tput cup 20 20
+tput cup 20 22
 echo -e -n " ${white}  ${choosemssg} ${NC}"
+tput cup 22 22
+echo -e -n " ${lightred}  ${notmorethanonedesktopmssg} ${NC}"
+
 read opt
 tput clear
 tput sgr0

@@ -4,25 +4,25 @@ Since Ubunutu supports most of them by default over tasksel ther are just a few 
 
 ##Available Desktops
 
--Cinnamon
+- Cinnamon
 
--Enlightenment 
+- Enlightenment 
 
--Gnome 3
+- Gnome 3
 
--KDE 5.6
+- KDE 5.6
 
--LXDE
+- LXDE
 
--MATE
+- MATE
 
--Budgie
+- Budgie
 
--Unity
+- Unity
 
--Xfce
+- Xfce
 
--Elementary Os
+- Elementary OS
 
 
 

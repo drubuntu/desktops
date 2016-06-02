@@ -6,11 +6,11 @@ AGENT="User-Agent: Mozilla/5.0 (Linux; U; Windows NT 5.1; en-US; rv:1.9.2.12) Ge
 XSESSIONPATH=/USR/SHARE/XSESSIONS/
 #-----------------------------
 cd ${0%/*}
-source $bdir/colors.sh
+source $bdir/colors
 if [ "$LANG" == "de_DE.UTF-8" ];then
-source $bdir/de.sh
+source $bdir/de
 else
-source $bdir/en.sh
+source $bdir/en
 fi
 
 if [ `whoami` != root ]; then

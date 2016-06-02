@@ -162,7 +162,7 @@ reboot
 echo "Installing KDE ..."
 echo "Your System will reeboot when we are ready!"
 cat coffee.txt
-KDE is really big. So take your time and grap some coffee!"
+echo "KDE is really big. So take your time and grap some coffee!"
 
 
 

@@ -203,7 +203,13 @@ reboot
             ;;
     
   10) clear;
-echo "not ready yet"
+apt-add-repository -y ppa:elementary-os/stable &&
+apt-add-repository -y ppa:elementary-os/os-patches &&
+apt update &&
+apt-get -y -qq install elementary-desktop
+apt-get -y remove unity-greeter &&
+dpkg-reconfigure pantheon-greeter &&
+apt -y dist-upgrade && apt- y full-upgrade
 exit
 
     show_menu;

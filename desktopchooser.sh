@@ -124,7 +124,7 @@ echo "Your System will reeboot when  we are ready!"
 lightdm
 add-apt-repository -y  ppa:embrosyn/cinnamon >>/dev/null 2>&1
 apt-get update >>/dev/null 2>&1
-apt -y  install cinnamon 
+apt-get -y -qq --force-yes --assume-yes  install cinnamon 
 apt-get -y -qq dist-upgrade
 reboot
         show_menu;

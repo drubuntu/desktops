@@ -205,7 +205,7 @@ reboot
 echo "Your System will reeboot when we are ready!"
 sudo apt-add-repository -y ppa:budgie-remix/ppa >>/dev/null 2>&1
 apt update >>/dev/null 2>&1 
-apt  -y --force-yes -qq  install  budgie-desktop >>/dev/null 2>&1 
+apt  -y --force-yes -qq  install  budgie-desktop-environment >>/dev/null 2>&1 
 apt -y dist-upgrade && apt -y full-upgrade >>/dev/null 2>&1
 reboot
        show_menu;

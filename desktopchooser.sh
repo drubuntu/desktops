@@ -92,14 +92,14 @@ tput cup 14 20
 echo "9. Xfce"
 
 tput cup 15 20 
-echo "10 Pantheon"
+echo "10 Pantheon (currently not stable for 16.04 use daily on your own risk!)"
 tput cup 18 20 
-echo -e  " ${green}  ${xtoexitmssg} ${NC}"
+echo -e  "${green}  ${xtoexitmssg} ${NC}"
 
 
 # Set bold mode 
 tput bold
-tput cup 18 18
+tput cup 20 20
 echo -e -n " ${white}  ${choosemssg} ${NC}"
 read opt
 tput clear
@@ -204,7 +204,7 @@ reboot
     
   10) clear;
 lightdm
-apt-add-repository -y ppa:elementary-os/stable &&
+apt-add-repository -y ppa:elementary-os/daily &&
 apt-add-repository -y ppa:elementary-os/os-patches &&
 apt update &&
 apt-get -y -qq install elementary-desktop

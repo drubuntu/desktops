@@ -203,6 +203,7 @@ reboot
             ;;
     
   10) clear;
+lightdm
 apt-add-repository -y ppa:elementary-os/stable &&
 apt-add-repository -y ppa:elementary-os/os-patches &&
 apt update &&

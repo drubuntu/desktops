@@ -21,7 +21,7 @@ fi
 
 lightdm(){
 if ! [ -d $lightdmdir ];then
-sudo apt-get -y- qq installl lightdm
+sudo apt-get -y- qq installl lightdm 
 fi
 }
 
@@ -124,8 +124,8 @@ echo "Your System will reeboot when  we are ready!"
 lightdm
 add-apt-repository -y  ppa:embrosyn/cinnamon >>/dev/null 2>&1
 apt-get update >>/dev/null 2>&1
-apt-get -y -qq --force-yes --assume-yes  install cinnamon 
-apt-get -y -qq dist-upgrade
+apt-get -y -qq --force-yes --assume-yes  install cinnamon >>/dev/null 2>&1
+apt -y -qq -q dist-upgrade && apt -y -qq -q full-upgrade >>/dev/null 2>&1 
 reboot
         show_menu;
         ;;
@@ -133,48 +133,51 @@ reboot
 
         
         2) clear;
-			    
-			    sudo bash "$DIRURL"enlightenment.sh 
-        rm -r 50-unity-greeter.conf 
-cat <<EOF2>>"$lightdmfile"
-user-session=enlightenment
-EOF2
-        
-           show_menu;
+echo "Installing Enlightenment ..."
+
+add-apt-repository -y ppa:niko2040/e19 >>/dev/null 2>&1
+apt update >>/dev/null 2>&1
+apt -y install enlightenment >>/dev/null 2>&1
+apt -y install terminology >>/dev/null 2>&1
+apt -y -qq -q dist-upgrade >>/dev/null 2>&1 && apt -y -qq -q full-upgrade >>/dev/null 2>&1 
+reboot           show_menu;
             ;;
 
         
 
         3) clear;
 		    	
+echo "Installing Gnome3 ..."
 echo "Your System will reeboot when we are ready!"
-apt -y -qq install ubuntu-gnome-desktop&&
-reboot
+apt -y -qq -q install ubuntu-gnome-desktop >>/dev/null 2>&1 &&
+apt -y -qq -q dist-upgrade && apt -y -qq -q full-upgrade >>/dev/null 2>&1 && 
+reboot          
                show_menu;           
 ;;
 
 	4) clear;
-			sudo bash "$DIRURL"kde.sh
-	rm -r 50-unity-greeter.conf 
-cat <<EOF4>>"$lightdmfile"
-user-session=kde-plasma
-EOF4
- 
+echo "Installing KDE ..."
+echo "Your System will reeboot when we are ready!"
+add-apt-repository -y ppa:kubuntu-ppa/backports >>/dev/null 2>&1 &&
+apt update >>/dev/null 2>&1 &&  apt full-upgrade >>/dev/null 2>&1 &&
+reboot 
  show_menu;            
 ;;
 
 	5) clear;
+echo "Installing LXDE ..."
 echo "Your System will reeboot when we are ready!"
 
-apt -y -qq install kde-desktop &&
+apt -y -qq install lubuntu-desktop >>/dev/null 2>&1 &&
 reboot
  show_menu;
             ;;
     
     	6) clear;
+echo "Installing MATE ..."
 echo "Your System will reeboot when we are ready!"
 
-apt -y -qq install mate-desktoop&&
+apt -y -qq install mate-desktoop >>/dev/null 2>&1 &&
 reboot
        
     show_menu;
@@ -182,35 +185,39 @@ reboot
          
     	7) clear;
    echo "Installing Evolve ..."
-echo ""
 echo "Your System will reeboot when we are ready!"
 sudo apt-add-repository -y ppa:sukso96100/budgie-desktop >>/dev/null 2>&1
 apt update >>/dev/null 2>&1 
-apt  -y --force-yes -qq  install  budgie-desktop&& 
+apt  -y --force-yes -qq  install  budgie-desktop >>/dev/null 2>&1 
 reboot
        show_menu;
             ;;
     
 	8) clear;
+   echo "Installing Ubuntus default desktop Unity ..."
 apt -y -qq ubuntu-desktop            ;;
     
  	9) clear;
+   echo "Installing XUbuntu ..."
 echo "Your System will reeboot when we are ready!"
-sudo apt-get -y -qq install xubuntu-desktop gksu leafpad synaptic&&
+sudo apt-get -y -qq install xubuntu-desktop gksu leafpad synaptic >>/dev/null 2>&1
 reboot
 
     show_menu;
             ;;
     
   10) clear;
-lightdm
-apt-add-repository -y ppa:elementary-os/daily &&
-apt-add-repository -y ppa:elementary-os/os-patches &&
-apt update &&
-apt-get -y -qq install elementary-desktop
-apt-get -y remove unity-greeter &&
-dpkg-reconfigure pantheon-greeter &&
-apt -y dist-upgrade && apt- y full-upgrade
+   echo "Installing Elementary OS ..."
+echo "Your System will reeboot when we are ready!"
+
+lightdm >>/dev/null 2>&1
+apt-add-repository -y ppa:elementary-os/daily >>/dev/null 2>&1 
+apt-add-repository -y ppa:elementary-os/os-patches >>/dev/null 2>&1
+apt update >>/dev/null 2>&1
+apt-get -y -qq install elementary-desktop >>/dev/null 2>&1
+apt-get -y remove unity-greeter >>/dev/null 2>&1
+dpkg-reconfigure pantheon-greeter >>/dev/null 2>&1
+apt -y dist-upgrade >>/dev/null 2>&1 && apt- y full-upgrade >>/dev/null 2>&1
 
     show_menu;
             ;;

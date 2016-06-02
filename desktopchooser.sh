@@ -64,36 +64,36 @@ echo -e " ${red}  ${choosedesktopmssg} ${NC}"
 
 tput sgr0
  
-tput cup 7 19
+tput cup 6 20
 echo "1. Cinnamon"
 
-tput cup 8 19
+tput cup 7 20
 echo "2. Enlightenment (currently not redy for 16.04)"
 
-tput cup 9 19
+tput cup 8 20
 echo "3. Gnome 3"
 
-tput cup 10 19
+tput cup 9 20
 echo "4. KDE"
 
-tput cup 11 19
+tput cup 10 20
 echo "5. LXDE"
 
-tput cup 12 19
+tput cup 11 20
 echo "6. Mate"
 
-tput cup 13 19
+tput cup 12 20
 echo "7. Evolve"
 
-tput cup 14 19
+tput cup 13 20
 echo "8. Unity"
 
-tput cup 15 19
+tput cup 14 20
 echo "9. Xfce"
 
-tput cup 16 19 
+tput cup 15 20 
 echo "10 Pantheon"
-tput cup 18 19 
+tput cup 18 20 
 echo -e  " ${green}  ${xtoexitmssg} ${NC}"
 
 
@@ -210,7 +210,6 @@ apt-get -y -qq install elementary-desktop
 apt-get -y remove unity-greeter &&
 dpkg-reconfigure pantheon-greeter &&
 apt -y dist-upgrade && apt- y full-upgrade
-exit
 
     show_menu;
             ;;

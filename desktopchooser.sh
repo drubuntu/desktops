@@ -228,14 +228,14 @@ reboot
    echo "Installing Elementary OS ..."
 echo "Your System will reeboot when we are ready!"
 
-lightdm >>/dev/null 2>&1
-apt-add-repository -y ppa:elementary-os/daily >>/dev/null 2>&1 
-apt-add-repository -y ppa:elementary-os/os-patches >>/dev/null 2>&1
+lightdm 
+apt-add-repository -y ppa:elementary-os/daily  
+apt-add-repository -y ppa:elementary-os/os-patches 
 apt update >>/dev/null 2>&1
-apt-get -y -qq install elementary-desktop >>/dev/null 2>&1
-apt-get -y remove unity-greeter >>/dev/null 2>&1
-dpkg-reconfigure pantheon-greeter >>/dev/null 2>&1
-apt -y dist-upgrade >>/dev/null 2>&1 && apt- y full-upgrade >>/dev/null 2>&1
+apt-get -y -qq install elementary-desktop 
+apt-get -y remove unity-greeter 
+dpkg-reconfigure pantheon-greeter 
+apt -y dist-upgrade  && apt- y full-upgrade 
 
     show_menu;
             ;;

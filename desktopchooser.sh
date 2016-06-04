@@ -19,6 +19,15 @@ else
 source $bdir/en
 fi
 
+distupgrade()
+{
+	DEBIAN_FRONTEND=noninteractive \
+apt-get \
+-o Dpkg::Options::="--force-confnew" \
+--force-yes \
+-fuy \
+dist-upgrade
+}
 
 lightdm(){
 if ! [ -d $lightdmdir ];then
@@ -129,7 +138,7 @@ lightdm
 add-apt-repository -y  ppa:embrosyn/cinnamon >>/dev/null 2>&1
 apt-get update >>/dev/null 2>&1
 apt-get -y -qq --force-yes --assume-yes  install cinnamon >>/dev/null 2>&1
-apt -y -qq -q dist-upgrade && apt -y -qq -q full-upgrade >>/dev/null 2>&1 
+distupgrade >>/dev/null 2>&1 && apt -y -qq -q full-upgrade >>/dev/null 2>&1 
 reboot
         show_menu;
         ;;
@@ -143,7 +152,7 @@ add-apt-repository -y ppa:niko2040/e19 >>/dev/null 2>&1
 apt update >>/dev/null 2>&1
 apt -y install enlightenment >>/dev/null 2>&1
 apt -y install terminology >>/dev/null 2>&1
-apt -y -qq -q dist-upgrade >>/dev/null 2>&1 && apt -y -qq -q full-upgrade >>/dev/null 2>&1 
+distupgrade >>/dev/null 2>&1 && apt -y -qq -q full-upgrade >>/dev/null 2>&1 
 reboot           show_menu;
             ;;
 
@@ -154,7 +163,7 @@ reboot           show_menu;
 echo "Installing Gnome3 ..."
 echo "Your System will reeboot when we are ready!"
 apt -y -qq -q install ubuntu-gnome-desktop >>/dev/null 2>&1 &&
-apt -y -qq -q dist-upgrade && apt -y -qq -q full-upgrade >>/dev/null 2>&1 && 
+distupgrade >>/dev/null 2>&1 && apt -y -qq -q full-upgrade >>/dev/null 2>&1 && 
 reboot          
                show_menu;           
 ;;
@@ -175,7 +184,7 @@ echo "KDE is really big. So take your time and grap some coffee!"
 add-apt-repository -y ppa:kubuntu-ppa/backports >>/dev/null 2>&1 &&
 apt update >>/dev/null 2>&1 &&  
 apt -y install kubuntu-desktop >>/dev/null 2>&1 &&
-apt -y dist-upgrade >>/dev/null 2>&1 &&
+distupgrade >>/dev/null 2>&1 &&
 apt -y full-upgrade   >>/dev/null 2>&1 &&
 reboot 
  show_menu;            
@@ -186,6 +195,7 @@ echo "Installing LXDE ..."
 echo "Your System will reeboot when we are ready!"
 
 apt -y -qq install lubuntu-desktop >>/dev/null 2>&1 &&
+distupgrade >>/dev/null 2>&1 &&
 reboot
  show_menu;
             ;;
@@ -195,6 +205,7 @@ echo "Installing MATE ..."
 echo "Your System will reeboot when we are ready!"
 
 apt -y -qq install mate-desktoop >>/dev/null 2>&1 &&
+distupgrade >>/dev/null 2>&1 &&
 reboot
        
     show_menu;
@@ -206,19 +217,23 @@ echo "Your System will reeboot when we are ready!"
 sudo apt-add-repository -y ppa:budgie-remix/ppa >>/dev/null 2>&1
 apt update >>/dev/null 2>&1 
 apt  -y --force-yes -qq  install  budgie-desktop-environment >>/dev/null 2>&1 
-apt -y dist-upgrade && apt -y full-upgrade >>/dev/null 2>&1
+distupgrade >>/dev/null 2>&1 && apt -y full-upgrade >>/dev/null 2>&1
 reboot
        show_menu;
             ;;
     
 	8) clear;
    echo "Installing Ubuntus default desktop Unity ..."
-apt -y -qq ubuntu-desktop            ;;
+apt -y -qq ubuntu-desktop   &&
+distupgrade >>/dev/null 2>&1 &&
+reboot
+;;
     
  	9) clear;
    echo "Installing XUbuntu ..."
 echo "Your System will reeboot when we are ready!"
-sudo apt-get -y -qq install xubuntu-desktop gksu leafpad synaptic >>/dev/null 2>&1
+sudo apt-get -y -qq install xubuntu-desktop gksu leafpad synaptic >>/dev/null 2>&1 &&
+distupgrade >>/dev/null 2>&1 &&
 reboot
 
     show_menu;
@@ -229,13 +244,15 @@ reboot
 echo "Your System will reeboot when we are ready!"
 
 lightdm 
-apt-add-repository -y ppa:elementary-os/daily  
-apt-add-repository -y ppa:elementary-os/os-patches 
-apt update >>/dev/null 2>&1
-apt-get -y -qq install elementary-desktop 
-apt-get -y remove unity-greeter 
-dpkg-reconfigure pantheon-greeter 
-apt -y dist-upgrade  && apt- y full-upgrade 
+apt-add-repository -y ppa:elementary-os/daily  >>/dev/null 2>&1
+apt-add-repository -y ppa:elementary-os/os-patches  >>/dev/null 2>&1
+apt update >>/dev/null 2>&1 &&
+apt-get -y -qq install elementary-desktop  >>/dev/null 2>&1 &&
+apt-get -y remove unity-greeter >>/dev/null 2>&1 &&
+dpkg-reconfigure pantheon-greeter >>/dev/null 2>&1 &&
+
+distupgrade >>/dev/null 2>&1  && apt- y full-upgrade >>/dev/null 2>&1 &&
+reboot
 
     show_menu;
             ;;

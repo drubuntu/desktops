@@ -139,7 +139,7 @@ add-apt-repository -y  ppa:embrosyn/cinnamon >>/dev/null 2>&1
 apt-get update >>/dev/null 2>&1
 apt-get -y -qq --force-yes --assume-yes  install cinnamon >>/dev/null 2>&1
 distupgrade >>/dev/null 2>&1 && apt -y -qq -q full-upgrade >>/dev/null 2>&1 
-reboot
+sudo reboot now
         show_menu;
         ;;
 
@@ -153,7 +153,8 @@ apt update >>/dev/null 2>&1
 apt -y install enlightenment >>/dev/null 2>&1
 apt -y install terminology >>/dev/null 2>&1
 distupgrade >>/dev/null 2>&1 && apt -y -qq -q full-upgrade >>/dev/null 2>&1 
-reboot           show_menu;
+sudo reboot now
+show_menu;
             ;;
 
         
@@ -164,7 +165,7 @@ echo "Installing Gnome3 ..."
 echo "Your System will reeboot when we are ready!"
 apt -y -qq -q install ubuntu-gnome-desktop >>/dev/null 2>&1 &&
 distupgrade >>/dev/null 2>&1 && apt -y -qq -q full-upgrade >>/dev/null 2>&1 && 
-reboot          
+sudo reboot now
                show_menu;           
 ;;
 
@@ -173,20 +174,12 @@ echo "Installing KDE ..."
 echo "Your System will reeboot when we are ready!"
 cat coffee.txt
 echo "KDE is really big. So take your time and grap some coffee!"
-
-
-
-
-
-
-
-
 add-apt-repository -y ppa:kubuntu-ppa/backports >>/dev/null 2>&1 &&
 apt update >>/dev/null 2>&1 &&  
 apt -y install kubuntu-desktop >>/dev/null 2>&1 &&
 distupgrade >>/dev/null 2>&1 &&
 apt -y full-upgrade   >>/dev/null 2>&1 &&
-reboot 
+sudo reboot now
  show_menu;            
 ;;
 
@@ -196,7 +189,7 @@ echo "Your System will reeboot when we are ready!"
 
 apt -y -qq install lubuntu-desktop >>/dev/null 2>&1 &&
 distupgrade >>/dev/null 2>&1 &&
-reboot
+sudo reboot now
  show_menu;
             ;;
     
@@ -206,7 +199,7 @@ echo "Your System will reeboot when we are ready!"
 
 apt -y -qq install mate-desktoop >>/dev/null 2>&1 &&
 distupgrade >>/dev/null 2>&1 &&
-reboot
+sudo reboot now
        
     show_menu;
             ;;
@@ -218,7 +211,7 @@ sudo apt-add-repository -y ppa:budgie-remix/ppa >>/dev/null 2>&1
 apt update >>/dev/null 2>&1 
 apt  -y --force-yes -qq  install  budgie-desktop-environment >>/dev/null 2>&1 
 distupgrade >>/dev/null 2>&1 && apt -y full-upgrade >>/dev/null 2>&1
-reboot
+sudo reboot now
        show_menu;
             ;;
     
@@ -226,7 +219,7 @@ reboot
    echo "Installing Ubuntus default desktop Unity ..."
 apt -y -qq ubuntu-desktop   &&
 distupgrade >>/dev/null 2>&1 &&
-reboot
+sudo reboot now
       show_menu;
             ;;
      
@@ -235,7 +228,7 @@ reboot
 echo "Your System will reeboot when we are ready!"
 sudo apt-get -y -qq install xubuntu-desktop gksu leafpad synaptic >>/dev/null 2>&1 &&
 distupgrade >>/dev/null 2>&1 &&
-reboot
+sudo reboot now
 
     show_menu;
             ;;
@@ -253,7 +246,7 @@ apt-get -y remove unity-greeter >>/dev/null 2>&1 &&
 dpkg-reconfigure pantheon-greeter >>/dev/null 2>&1 &&
 
 distupgrade >>/dev/null 2>&1  && apt- y full-upgrade >>/dev/null 2>&1 &&
-reboot
+sudo reboot now
 
     show_menu;
             ;;

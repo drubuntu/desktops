@@ -227,8 +227,9 @@ reboot
 apt -y -qq ubuntu-desktop   &&
 distupgrade >>/dev/null 2>&1 &&
 reboot
-;;
-    
+      show_menu;
+            ;;
+     
  	9) clear;
    echo "Installing XUbuntu ..."
 echo "Your System will reeboot when we are ready!"
